@@ -7,22 +7,24 @@ public class MovePlayer : MonoBehaviour
 	public int currentFloorNumber = 0;
 	public float currentFloorY = 0;
 	public LayerMask floorLayer;
+    
+	[SerializeField] private Transform[] floorWaypoints;
+	private Transform[] floorWaypointsPath;
+	private int currentWaypoint;
 
-	public Transform[] floorWaypoints;
-	public Transform[] floorWaypointsPath;
-	public int currentWaypoint;
+	private int destinationFloor;
+	private float newfloorX;
+	private bool changingFloors;
 
-	public int destinationFloor;
-	public float newfloorX;
-	public bool changingFloors;
-
-	Vector2 newPosition;
-	bool clickable = true;
+	private Rigidbody2D rb2d;
+	private Vector2 newPosition;
+	private bool clickable = true;
 
 	public float moveDir;
 
 	private void Awake()
 	{
+		rb2d = GetComponent<Rigidbody2D>();
 		newPosition = transform.position;
 	}
 
@@ -112,15 +114,9 @@ public class MovePlayer : MonoBehaviour
 
 	private void Moving()
 	{
-		//float step = moveSpeed * Time.deltaTime;
-		//transform.position = Vector3.MoveTowards(transform.position, newPosition, step);
-		//Vector3 movePosition = transform.position;
-
-		Vector3 movePosition = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
-		GetComponent<Rigidbody2D>().MovePosition(movePosition);
+		rb2d.MovePosition(Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime));
 
 		moveDir = (transform.position.x - newPosition.x);
-
 	}
 
 	private void FloorChecking()
