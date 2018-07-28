@@ -1,4 +1,4 @@
-﻿public interface IintAct 
+﻿public interface IIntAct 
 {
 	void StartUsingInteractable();
 	void StopUsingInteractable();

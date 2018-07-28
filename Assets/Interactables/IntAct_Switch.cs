@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 
-public class IntAct_Switch : MonoBehaviour, IintAct
+public class IntAct_Switch : MonoBehaviour, IIntAct
 {
+	public Animator animator;
+	public string animatorBool;
+
 	public void StartUsingInteractable()
 	{
-		GetComponent<SpriteRenderer>().color = Color.green;
+		if (animator)
+		{
+			GetComponent<SpriteRenderer>().color = Color.green;
+            animator.SetBool(animatorBool, true);
+		}
 	}
 
 	public void StopUsingInteractable()

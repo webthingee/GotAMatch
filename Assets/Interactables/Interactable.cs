@@ -36,11 +36,11 @@ public class Interactable : MonoBehaviour
 
     private void StartUsingInteractable()
 	{
-		GetComponent<IintAct>().StartUsingInteractable();
+		GetComponent<IIntAct>().StartUsingInteractable();
 	}
 
 	private void StopUsingInteractable()
     {
-        GetComponent<IintAct>().StopUsingInteractable();
+        GetComponent<IIntAct>().StopUsingInteractable();
     }
 }
