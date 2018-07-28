@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{4979CA73-B940-BC29-EEB6-A935384F9449}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/MovePlayer.cs">
+    <Files>
+      <File FileName="Assets/Player/MovePlayer.cs" Line="59" Column="3" />
+      <File FileName="Assets/Player/SpriteCtrl.cs" Line="17" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
