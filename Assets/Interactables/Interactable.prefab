@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212406270590843070}
   - component: {fileID: 58589405956383942}
   - component: {fileID: 114757260909949238}
+  - component: {fileID: 114414207045371688}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474320873527490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.86, y: 4.62, z: 0}
+  m_LocalPosition: {x: 4.52, y: 0.61, z: 0}
   m_LocalScale: {x: 0.462, y: 0.462, z: 1}
   m_Children:
   - {fileID: 4274168347013134}
@@ -103,6 +104,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114414207045371688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474320873527490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca6b82e357cb4ad78a4cd2409f85abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114582842769842698
 MonoBehaviour:
   m_ObjectHideFlags: 1

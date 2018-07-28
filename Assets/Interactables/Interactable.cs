@@ -1,11 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
 	public bool canUse;
-	public bool inUse;
+	[SerializeField] private bool inUse;
+
+	public bool InUse
+	{
+		get
+		{
+			return inUse;
+		}
+
+		set
+		{
+			inUse = value;
+			if (inUse == true) StartUsingInteractable();
+		}
+	}
 
 	private void OnMouseDown()
 	{
@@ -13,12 +25,22 @@ public class Interactable : MonoBehaviour
         foreach (var a in A)
 		{
 			a.canUse = false;
-			a.inUse = false;
+			a.InUse = false;
 		}
 	}
 
 	private void OnMouseUp()
 	{
 		canUse = true;
-	}   
+	}  
+
+    private void StartUsingInteractable()
+	{
+		GetComponent<IintAct>().StartUsingInteractable();
+	}
+
+	private void StopUsingInteractable()
+    {
+        GetComponent<IintAct>().StopUsingInteractable();
+    }
 }
