@@ -15,7 +15,8 @@ public class Interactable : MonoBehaviour
 		set
 		{
 			inUse = value;
-			if (inUse == true) StartUsingInteractable();
+			if (inUse == true && canUse == true) StartUsingInteractable();
+			//if (inUse == false) StopUsingInteractable();
 		}
 	}
 

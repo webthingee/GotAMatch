@@ -16,6 +16,6 @@ public class IntAct_Switch : MonoBehaviour, IIntAct
 
 	public void StopUsingInteractable()
 	{
-		Debug.Log("Walking Away Now");
+		//Debug.Log("Walking Away Now");
 	}
 }
