@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{4979CA73-B940-BC29-EEB6-A935384F9449}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resource/Resource.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PoiCli Status">
     <Files>
-      <File FileName="Assets/Resource/Resource.cs" Line="20" Column="6" />
-      <File FileName="Assets/Resource/IntAct_Lock.cs" Line="20" Column="4" />
-      <File FileName="Assets/Interactables/Interactable.cs" Line="15" Column="6" />
+      <File FileName="PoiCli Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

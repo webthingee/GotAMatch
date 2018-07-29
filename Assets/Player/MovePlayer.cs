@@ -51,7 +51,24 @@ public class MovePlayer : MonoBehaviour
 	private void LateUpdate()
 	{
 		FloorChecking();
+
+		if (Input.GetMouseButtonUp(1))
+		{
+			DropStuff();
+        }
 	}
+
+    private void DropStuff()
+	{
+		Resource[] A = FindObjectsOfType<Resource>();
+        foreach (var a in A)
+        {
+            a.canUse = false;
+            if (a.inUse == true)
+                a.DropResource();
+        }
+	}
+
 
 	private void ChangingFloorsPlan()
 	{
