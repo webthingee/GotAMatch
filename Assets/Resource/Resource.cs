@@ -17,14 +17,15 @@ public class Resource : MonoBehaviour
 
 	private void Update()
 	{
-		PlayerChecking();
+        if (canUse) PlayerChecking();
 	}
 
 	private void PickUpResource()
 	{
 		Debug.Log("PickUp Resource");
-		GetComponent<BoxCollider2D>().enabled = false;
-		GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
+		canUse = false;
 		transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
 		transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + Vector3.up;
 
