@@ -37,6 +37,7 @@ public class Interactable : MonoBehaviour
 
     private void StartUsingInteractable()
 	{
+		Debug.Log("Start Using");
 		GetComponent<IIntAct>().StartUsingInteractable();
 	}
 
