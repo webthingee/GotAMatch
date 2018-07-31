@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Fungus;
 
 public class IntAct_TaskBox : MonoBehaviour, IIntAct
 {
@@ -15,10 +16,11 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
     public string animatorBool;
 
     private Key key;
-
+    
     public void StartUsingInteractable()
     {
         Debug.Log("Lock Actionable");
+		Flowchart.BroadcastFungusMessage("TaskBox");
 
         if (CheckActiveResource() == true)
         {

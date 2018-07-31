@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MovePlayer : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class MovePlayer : MonoBehaviour
 	{
 		if (Input.GetMouseButtonUp(0) && clickable)
 		{
+			if (EventSystem.current.IsPointerOverGameObject()) return;
+
 			Vector3 clickPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			newPosition = clickPoint;
 			newPosition.y = currentFloorY;

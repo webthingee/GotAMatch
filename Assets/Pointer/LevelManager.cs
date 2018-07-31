@@ -1,5 +1,13 @@
 ﻿using UnityEngine;
+/*
+ * 
 
+Gotta Block UI events propigate to gameview mouse click
+
+ * 
+ * 
+ * 
+ */
 public class LevelManager : MonoBehaviour 
 {
 /*
