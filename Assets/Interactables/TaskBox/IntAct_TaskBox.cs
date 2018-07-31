@@ -6,6 +6,7 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
     public int lockID;
 	public GameObject[] launchables;
 	bool complete;
+	public Flowchart flowchart;
 
     [Header("Open Reactions")]
     public bool removeLock;
@@ -16,15 +17,21 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
     public string animatorBool;
 
     private Key key;
-    
-    public void StartUsingInteractable()
+
+	private void Awake()
+	{
+		flowchart = GetComponent<Flowchart>();
+	}
+
+	public void StartUsingInteractable()
     {
         Debug.Log("Lock Actionable");
-		Flowchart.BroadcastFungusMessage("TaskBox");
+		flowchart.SetBooleanVariable("hasKey", false);
 
         if (CheckActiveResource() == true)
         {
-            if (animator)
+			flowchart.SetBooleanVariable("hasKey", true);
+			if (animator)
             {
                 GetComponent<SpriteRenderer>().color = Color.green;
                 animator.SetBool(animatorBool, true);
@@ -37,6 +44,8 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
         {
             Debug.Log("Lock Locked");
         }
+
+		Flowchart.BroadcastFungusMessage("TaskBox");
     }
 
     private void LockOpen()
