@@ -5,6 +5,8 @@ public class Interactable : MonoBehaviour
 	public bool canUse;
 	[SerializeField] private bool inUse;
 
+	PointerManager pointerManager;
+
 	public bool InUse
 	{
 		get
@@ -20,6 +22,11 @@ public class Interactable : MonoBehaviour
 		}
 	}
 
+    private void Awake()
+    {
+        pointerManager = FindObjectOfType<PointerManager>();
+    }
+
 	private void OnMouseDown()
 	{
 		Interactable[] A = FindObjectsOfType<Interactable>();
@@ -34,6 +41,17 @@ public class Interactable : MonoBehaviour
 	{
 		canUse = true;
 	}  
+
+	private void OnMouseOver()
+    {
+        pointerManager.pointerText = this.name;
+		Debug.Log("over");
+    }
+
+    private void OnMouseExit()
+    {
+        pointerManager.pointerText = "";
+    }
 
     private void StartUsingInteractable()
 	{

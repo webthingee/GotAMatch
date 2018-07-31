@@ -10,6 +10,17 @@ public class Resource : MonoBehaviour
 		Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>(), true);
 	}
 
+	private void OnMouseDown()
+	{
+		Resource[] A = FindObjectsOfType<Resource>();
+        foreach (var a in A)
+        {
+            a.canUse = false;
+            if (a.inUse == true)
+                a.DropResource();
+        }
+	}
+
 	private void OnMouseUp()
     {
 		canUse = true;
@@ -19,17 +30,19 @@ public class Resource : MonoBehaviour
 	{
         if (canUse) PlayerChecking();
 	}
-
+    
 	private void PickUpResource()
 	{
 		Debug.Log("PickUp Resource");
         GetComponent<BoxCollider2D>().enabled = false;
+		GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         GetComponent<Rigidbody2D>().isKinematic = true;
+
 		canUse = false;
+		inUse = true;
+
 		transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
 		transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + Vector3.up;
-
-		inUse = true;
 	}
 
     public void DropResource()
@@ -37,8 +50,10 @@ public class Resource : MonoBehaviour
 		Debug.Log("Drop Resource");
 		GetComponent<BoxCollider2D>().enabled = true;
         GetComponent<Rigidbody2D>().isKinematic = false;
+
 		canUse = false;
 		inUse = false;
+
 		transform.parent = null;
 		transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + Vector3.up - transform.right;
 	}
