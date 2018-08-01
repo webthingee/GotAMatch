@@ -1101,7 +1101,7 @@ RectTransform:
   m_Children:
   - {fileID: 1976341523}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2194,7 +2194,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1639240105420882, guid: 39b7d645b47824b6e8a5c7b99708f969, type: 2}
       propertyPath: m_Name
-      value: Door 3- (1)
+      value: 303
       objectReference: {fileID: 0}
     - target: {fileID: 212879567204921990, guid: 39b7d645b47824b6e8a5c7b99708f969,
         type: 2}
@@ -2420,8 +2420,8 @@ MonoBehaviour:
   m_ScreenX: 0.50729156
   m_ScreenY: 0.5333333
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.17187494
-  m_DeadZoneHeight: 0.11999997
+  m_DeadZoneWidth: 0.40850347
+  m_DeadZoneHeight: 0.36783883
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
@@ -2923,7 +2923,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1639240105420882, guid: 39b7d645b47824b6e8a5c7b99708f969, type: 2}
       propertyPath: m_Name
-      value: Door 3-
+      value: 304
       objectReference: {fileID: 0}
     - target: {fileID: 212879567204921990, guid: 39b7d645b47824b6e8a5c7b99708f969,
         type: 2}
@@ -3106,7 +3106,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.162506, y: 1.4521098, z: -10}
+  m_LocalPosition: {x: -31.162506, y: 1.4521093, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3901,6 +3901,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114923596850943822, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
         type: 2}
+      propertyPath: selectedBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114923596850943822, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
+        type: 2}
       propertyPath: selectedCommands.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -4005,7 +4010,7 @@ Prefab:
         type: 2}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 888048632}
+      objectReference: {fileID: 888048633}
     - target: {fileID: 114644237372388262, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
         type: 2}
       propertyPath: key
@@ -4031,6 +4036,16 @@ Prefab:
       propertyPath: UnlockInteractables.Array.data[1]
       value: 
       objectReference: {fileID: 1996487832}
+    - target: {fileID: 114374105073814744, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
+        type: 2}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 888048627}
+    - target: {fileID: 114923596850943822, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 888048636}
     m_RemovedComponents:
     - {fileID: 114431300945647164, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898, type: 2}
@@ -4666,6 +4681,12 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &888048626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114923596850943822, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
+    type: 2}
+  m_PrefabInternal: {fileID: 726108586}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!114 &888048627 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114095102969195872, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
@@ -4708,6 +4729,103 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 726108586}
   m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+--- !u!114 &888048634
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888048624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 11
+  indentLevel: 0
+  storyText: Turn the water heater on, and I'm done for the day!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 0
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &888048635
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888048624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 50
+    y: 141
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 9
+  blockName: Game Start
+  description: 
+  eventHandler: {fileID: 888048638}
+  commandList:
+  - {fileID: 888048640}
+  - {fileID: 888048634}
+--- !u!114 &888048636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114374105073814744, guid: 6ebbbd4ba4e3b4b8bb7879dd0cd36898,
+    type: 2}
+  m_PrefabInternal: {fileID: 726108586}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+--- !u!114 &888048638
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888048624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 888048635}
+  waitForFrames: 8
+--- !u!114 &888048640
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888048624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  storyText: Just one thing left to do.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 0
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &904699114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1502289868064568, guid: 08ff0ecff53c24301894a4d22e1fb98b,
@@ -6017,7 +6135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1639240105420882, guid: 39b7d645b47824b6e8a5c7b99708f969, type: 2}
       propertyPath: m_Name
-      value: Door 3- (2)
+      value: 302
       objectReference: {fileID: 0}
     - target: {fileID: 212879567204921990, guid: 39b7d645b47824b6e8a5c7b99708f969,
         type: 2}
@@ -7447,12 +7565,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1506289567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.54523, y: -6.266667, z: -10}
+  m_LocalPosition: {x: -32.54523, y: -6.2666674, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 374889671}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1506289570
 MonoBehaviour:
@@ -7717,6 +7835,17 @@ Prefab:
         type: 2}
       propertyPath: lockID
       value: 867
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977549671526258, guid: 2934dd6b499ee4c42b2a054247f18994,
+        type: 2}
+      propertyPath: indentLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977549671526258, guid: 2934dd6b499ee4c42b2a054247f18994,
+        type: 2}
+      propertyPath: storyText
+      value: I have to complete everything in the taskbox before I can do anything
+        else.
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114752609065793396, guid: 2934dd6b499ee4c42b2a054247f18994, type: 2}
@@ -8833,7 +8962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1819417660}
+  selectedFlowchart: {fileID: 888048626}
 --- !u!4 &1637774795
 Transform:
   m_ObjectHideFlags: 1
@@ -10607,7 +10736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1839634159
 Transform:
   m_ObjectHideFlags: 0
@@ -10704,8 +10833,9 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 1843446523}
-  selectedCommands: []
+  - {fileID: 1843446528}
+  selectedCommands:
+  - {fileID: 1843446525}
   variables: []
   description: 
   stepPause: 0
@@ -10794,7 +10924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: This says all the guests on the 3rd floor are here for a pool party.
+  storyText: The Work Order says the guests on the 3rd floor are here for a pool party.
+    They will need towels.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10820,7 +10951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: And there's a barcode at the bottom, opens some equipment somewhere.
+  storyText: There's a barcode at the bottom. This opens some equipment somewhere.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10861,7 +10992,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 66
     y: 59
-    width: 122
+    width: 123
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10913,7 +11044,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 66
     y: 124
-    width: 122
+    width: 123
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11680,7 +11811,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1639240105420882, guid: 39b7d645b47824b6e8a5c7b99708f969, type: 2}
       propertyPath: m_Name
-      value: Door 3- (3)
+      value: 301
       objectReference: {fileID: 0}
     - target: {fileID: 212879567204921990, guid: 39b7d645b47824b6e8a5c7b99708f969,
         type: 2}
@@ -12153,7 +12284,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2087186320
 GameObject:
