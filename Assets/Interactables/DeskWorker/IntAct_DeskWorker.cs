@@ -15,6 +15,7 @@ public class IntAct_DeskWorker : MonoBehaviour, IIntAct
     private Flowchart flowchart;
     public int key;
     private int sayInt;
+    public GameObject winCanvas;
 
     private void Awake()
     {
@@ -85,5 +86,10 @@ public class IntAct_DeskWorker : MonoBehaviour, IIntAct
     {
         if (key == null) return false;
         return key == lockID;
+    }
+
+    public void Win()
+    {
+        winCanvas.SetActive(true);
     }
 }

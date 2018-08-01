@@ -48,7 +48,6 @@ public class Interactable : MonoBehaviour
 	private void OnMouseOver()
     {
         pointerManager.pointerText = this.name;
-		Debug.Log("over");
     }
 
     private void OnMouseExit()
