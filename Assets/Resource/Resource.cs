@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Fungus;
 
 public class Resource : MonoBehaviour
 {
@@ -37,6 +38,12 @@ public class Resource : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
 		GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         GetComponent<Rigidbody2D>().isKinematic = true;
+
+		var key = GetComponent<Key>();
+		if (key != null)
+		{
+			Flowchart.BroadcastFungusMessage(key.fungusMsg);
+		}
 
 		canUse = false;
 		inUse = true;

@@ -14,7 +14,12 @@ public class IntAct_Lock : MonoBehaviour, IIntAct
     
 	private Key key;
 
-    public void StartUsingInteractable()
+	public void NotInProgress()
+	{
+		Debug.Log("Lock Not Active Yet");
+	}
+
+	public void StartUsingInteractable()
     {
 		Debug.Log("Lock Actionable");
 

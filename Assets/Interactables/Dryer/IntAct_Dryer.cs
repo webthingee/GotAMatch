@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Fungus;
+using UnityEngine;
 
 public class IntAct_Dryer : MonoBehaviour, IIntAct
 {
@@ -10,58 +11,81 @@ public class IntAct_Dryer : MonoBehaviour, IIntAct
     public bool removeLock;
     public bool removeKey;
 
-    [Header("Task Reactions")]
-    public Animator animator;
-    public string animatorBool;
-
+    private Flowchart flowchart;
     private Key key;
+    private int sayInt;
+
+    private void Awake()
+    {
+        flowchart = GetComponent<Flowchart>();
+    }
+    
+    public void NotInProgress()
+    {
+        flowchart.SetBooleanVariable("inProgress", false);
+        Flowchart.BroadcastFungusMessage("Dryer");
+    }
 
     public void StartUsingInteractable()
     {
-        Debug.Log("Lock Actionable");
+        flowchart.SetBooleanVariable("inProgress", true);
 
-        if (CheckActiveResource() == true)
+        if (CheckActiveResource())
         {
-            if (animator)
-            {
-                GetComponent<SpriteRenderer>().color = Color.green;
-                animator.SetBool(animatorBool, true);
-            }
-
-            Debug.Log("Lock Open");
-            LockOpen();
+            UnLocked();
         }
         else
         {
-            Debug.Log("Lock Locked");
+            Locked();
         }
+        
+        flowchart.SetIntegerVariable("choice", sayInt);     
+        Flowchart.BroadcastFungusMessage("Dryer");
     }
-
-    private void LockOpen()
+    
+    private void UnLocked()
     {
-		if (!complete)
+        if (!complete)
         {
+            Debug.Log("UnLocked");
 
-            int i = 21;
-            foreach (var item in launchables)
+            var i = 20;
+            foreach (GameObject item in launchables)
             {
                 GameObject towel = Instantiate(item, transform.position, transform.rotation);
                 towel.GetComponent<Key>().keyID = i;
                 towel.name = "Towel #" + i;
-				i++;
+                i++;
             }
-
+            
+            sayInt = 2;
             complete = true;
         }
 
         if (removeLock)
         {
-
+            flowchart.enabled = false;
         }
 
         if (removeKey)
         {
             Destroy(key.gameObject);
+        }
+    }
+
+    private void Locked()
+    {
+        Debug.Log("Locked");
+        
+        if (key != null)     // clicking with something in hand
+        {
+            sayInt = 1;
+            Debug.Log("This is not the right key");  
+        }
+        else                 // clicking without anything in hand
+        {
+            sayInt = 0;
+            Debug.Log("There is nothing in hand");
         }
     }
 
@@ -74,14 +98,7 @@ public class IntAct_Dryer : MonoBehaviour, IIntAct
     {
         key = GameObject.FindWithTag("Player").GetComponentInChildren<Key>();
 
-        if (key != null)
-        {
-            if (key.keyID == lockID)
-            {
-                return true;
-            }
-        }
-
-        return false;
+        if (key == null) return false;
+        return key.keyID == lockID;
     }
 }

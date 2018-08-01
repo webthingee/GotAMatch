@@ -8,7 +8,12 @@ public class IntAct_ToolBox : MonoBehaviour, IIntAct
 	public string animatorBool;
 
 	private bool complete = false;
-    
+
+	public void NotInProgress()
+	{
+		Debug.Log("Toolbox not active yet");
+	}
+
 	public void StartUsingInteractable()
 	{
 		if (!complete)

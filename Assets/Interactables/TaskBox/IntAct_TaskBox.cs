@@ -6,7 +6,6 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
     public int lockID;
 	public GameObject[] launchables;
 	bool complete;
-	public Flowchart flowchart;
 
     [Header("Open Reactions")]
     public bool removeLock;
@@ -15,64 +14,83 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
     [Header("Task Reactions")]
     public Animator animator;
     public string animatorBool;
+    public Interactable[] UnlockInteractables;
 
+    private Flowchart flowchart;
     private Key key;
+    private int sayInt;
 
-	private void Awake()
-	{
-		flowchart = GetComponent<Flowchart>();
-	}
-
-	public void StartUsingInteractable()
+    private void Awake()
     {
-        Debug.Log("Lock Actionable");
-		flowchart.SetBooleanVariable("hasKey", false);
+        flowchart = GetComponent<Flowchart>();
+        //flowchart.SetBooleanVariable("complete", complete);     
 
-        if (CheckActiveResource() == true)
+    }
+
+    public void NotInProgress()
+    {
+        flowchart.SetBooleanVariable("inProgress", false);
+        Flowchart.BroadcastFungusMessage("TaskBox");
+    }
+
+    public void StartUsingInteractable()
+    {
+        flowchart.SetBooleanVariable("inProgress", true);
+        if (CheckActiveResource())
         {
-			flowchart.SetBooleanVariable("hasKey", true);
-			if (animator)
-            {
-                GetComponent<SpriteRenderer>().color = Color.green;
-                animator.SetBool(animatorBool, true);
-            }
-
-            Debug.Log("Lock Open");
-            LockOpen();
+            UnLocked();
         }
         else
         {
-            Debug.Log("Lock Locked");
+            Locked();
         }
-
-		Flowchart.BroadcastFungusMessage("TaskBox");
+        
+        flowchart.SetIntegerVariable("choice", sayInt);     
+        Flowchart.BroadcastFungusMessage("TaskBox");
     }
-
-    private void LockOpen()
+    
+    private void UnLocked()
     {
-		if (!complete)
+        if (!complete)
         {
-            if (animator)
-            {
-                GetComponent<SpriteRenderer>().color = Color.green;
-                animator.SetBool(animatorBool, true);
-            }
+            Debug.Log("UnLocked");
 
-            int i = 10;
+            var i = 11;
             foreach (var item in launchables)
             {
                 GameObject workOrder = Instantiate(item, transform.position, transform.rotation);
-				workOrder.GetComponent<Key>().keyID = i;
-                workOrder.name = "Work Order #" + i;
-				i++;
-            }
+                workOrder.GetComponent<Key>().keyID = i;
 
+                switch (i)
+                {
+//                    case 10:
+//                        workOrder.name = "Computer Access";
+//                        workOrder.GetComponent<Key>().fungusMsg = "WorkOrder10";
+//                        break;
+                    case 11:
+                        workOrder.name = "Dryer Access";
+                        workOrder.GetComponent<Key>().fungusMsg = "WorkOrder11";
+                        break;
+                    default:
+                        workOrder.name = "Work Order";
+                        break;
+                }
+
+                i++;
+            }
+            
+            sayInt = 1;
             complete = true;
+
+            foreach (Interactable unlockInteractable in UnlockInteractables)
+            {
+                unlockInteractable.inProgress = true;
+            }
         }
 
         if (removeLock)
         {
-
+            flowchart.enabled = false;
         }
 
         if (removeKey)
@@ -80,6 +98,23 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
             Destroy(key.gameObject);
         }
     }
+
+    private void Locked()
+    {
+        Debug.Log("Locked");
+        
+        if (key != null)     // clicking with something in hand
+        {
+            sayInt = 2;
+            Debug.Log("This is not the right key");  
+        }
+        else                 // clicking without anything in hand
+        {
+            sayInt = 0;
+            Debug.Log("There is nothing in hand");
+        }
+    }
+
 
     public void StopUsingInteractable()
     {

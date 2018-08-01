@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyID: 91
+  keyName: 
+  fungusMsg: Screwdriver
 --- !u!212 &212304105092630168
 SpriteRenderer:
   m_ObjectHideFlags: 1

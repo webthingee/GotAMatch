@@ -4,21 +4,19 @@ public class Interactable : MonoBehaviour
 {
 	public bool canUse;
 	[SerializeField] private bool inUse;
+	[SerializeField] public bool inProgress;
 
 	PointerManager pointerManager;
 
 	public bool InUse
 	{
-		get
-		{
-			return inUse;
-		}
-
 		set
 		{
 			inUse = value;
-			if (inUse == true && canUse == true) StartUsingInteractable();
-			//if (inUse == false) StopUsingInteractable();
+			if (inProgress && inUse && canUse)
+			{
+				StartUsingInteractable();
+			}
 		}
 	}
 
@@ -29,7 +27,7 @@ public class Interactable : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		Interactable[] A = FindObjectsOfType<Interactable>();
+		var A = FindObjectsOfType<Interactable>();
         foreach (var a in A)
 		{
 			a.canUse = false;
@@ -40,6 +38,11 @@ public class Interactable : MonoBehaviour
 	private void OnMouseUp()
 	{
 		canUse = true;
+
+		if (!inProgress)
+		{
+			NotInProgress();
+		}
 	}  
 
 	private void OnMouseOver()
@@ -53,6 +56,11 @@ public class Interactable : MonoBehaviour
         pointerManager.pointerText = "";
     }
 
+	private void NotInProgress()
+	{
+		Debug.Log("Not In Progress");
+		GetComponent<IIntAct>().NotInProgress();
+	}
     private void StartUsingInteractable()
 	{
 		Debug.Log("Start Using");

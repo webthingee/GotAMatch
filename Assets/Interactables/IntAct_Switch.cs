@@ -5,6 +5,11 @@ public class IntAct_Switch : MonoBehaviour, IIntAct
 	public Animator animator;
 	public string animatorBool;
 
+	public void NotInProgress()
+	{
+		
+	}
+
 	public void StartUsingInteractable()
 	{
 		if (animator)
