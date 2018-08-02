@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public string optionScene;
     public GameObject[] showOnAwake;
 
     private void Awake()
@@ -11,12 +13,12 @@ public class LevelManager : MonoBehaviour
             o.SetActive(true);
         }
     }
-
-    private void OnDestroy()
+    
+    private void Update()
     {
-        foreach (GameObject o in showOnAwake)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            o.SetActive(false);
+            Application.Quit();
         }
     }
 

@@ -49,7 +49,7 @@ public class IntAct_Dryer : MonoBehaviour, IIntAct
         {
             Debug.Log("UnLocked");
 
-            var i = 20;
+            var i = 301;
             foreach (GameObject item in launchables)
             {
                 GameObject towel = Instantiate(item, transform.position, transform.rotation);
