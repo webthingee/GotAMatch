@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e565e9cc98a54323bfb13ab807c9738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: a match
   canUse: 0
   inUse: 0
 --- !u!114 &114495327091777530
@@ -145,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyID: 321
+  keyName: 
+  fungusMsg: 
 --- !u!212 &212894285231130700
 SpriteRenderer:
   m_ObjectHideFlags: 1

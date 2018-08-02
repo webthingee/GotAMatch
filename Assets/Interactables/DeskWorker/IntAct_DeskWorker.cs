@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class IntAct_DeskWorker : MonoBehaviour, IIntAct
 {
+    // @TODO IntAct_ Should Have Been Base Class!!!!
+    
     public int lockID;
-	public GameObject[] launchables;
 	bool complete;
     public Interactable[] UnlockInteractables;
 
@@ -84,7 +85,6 @@ public class IntAct_DeskWorker : MonoBehaviour, IIntAct
 
     private bool CheckActiveResource()
     {
-        if (key == null) return false;
         return key == lockID;
     }
 

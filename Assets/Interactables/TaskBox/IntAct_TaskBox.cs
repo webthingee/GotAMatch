@@ -53,7 +53,7 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
     {
         if (!complete)
         {
-            Debug.Log("UnLocked");
+//            Debug.Log("UnLocked");
 
             var i = 11;
             foreach (var item in launchables)
@@ -101,7 +101,7 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
 
     private void Locked()
     {
-        Debug.Log("Locked");
+//        Debug.Log("Locked");
         
         if (key != null)     // clicking with something in hand
         {
@@ -111,7 +111,7 @@ public class IntAct_TaskBox : MonoBehaviour, IIntAct
         else                 // clicking without anything in hand
         {
             sayInt = 0;
-            Debug.Log("There is nothing in hand");
+//            Debug.Log("There is nothing in hand");
         }
     }
 

@@ -1,43 +1,23 @@
 ﻿using UnityEngine;
-/*
- * 
 
-Gotta Block UI events propigate to gameview mouse click
-
- * 
- * 
- * 
- */
-public class LevelManager : MonoBehaviour 
+public class LevelManager : MonoBehaviour
 {
-/*
- * 
- 
- - [ standing in boiler room ]
- -- That's it, just light the pilot lite and I can go home early.
+    public GameObject[] showOnAwake;
 
-^ { ToolBox }
-! Screwdriver
-! Match
+    private void Awake()
+    {
+        foreach (GameObject o in showOnAwake)
+        {
+            o.SetActive(true);
+        }
+    }
 
-^ { Boiler } == ( Match )
--- Fizzle and out! That was my last match. I'll have to ask around. 
+    private void OnDestroy()
+    {
+        foreach (GameObject o in showOnAwake)
+        {
+            o.SetActive(false);
+        }
+    }
 
-- [ Lobby ]
--- There might be some in the gift shop, but dude is gone for the day and I can' leave til I get my work orders done.
--- But they are stuck in the TaskBox, and I can't get it open.
-
-
-^ { TaskBox } == ( Screwdriver )
-!- Task Paper Bill Delivery
-!- Task Paper Towels
-
-
-
-
-*
-*
-*
-*
-*/
 }

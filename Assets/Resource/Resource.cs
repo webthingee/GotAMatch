@@ -3,12 +3,16 @@ using Fungus;
 
 public class Resource : MonoBehaviour
 {
-    public bool canUse;
+	public string title;
+	public bool canUse;
     public bool inUse;
+
+	private PointerManager pointerManager;
     
 	private void Awake()
 	{
 		Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>(), true);
+		pointerManager = FindObjectOfType<PointerManager>();
 	}
 
 	private void OnMouseDown()
@@ -26,6 +30,17 @@ public class Resource : MonoBehaviour
     {
 		canUse = true;
     }
+	
+	private void OnMouseOver()
+	{
+		var displayName = title != "" ? title : name;
+		pointerManager.pointerText = displayName;
+	}
+
+	private void OnMouseExit()
+	{
+		pointerManager.pointerText = "";
+	}
 
 	private void Update()
 	{
@@ -34,7 +49,7 @@ public class Resource : MonoBehaviour
     
 	private void PickUpResource()
 	{
-		Debug.Log("PickUp Resource");
+//		Debug.Log("PickUp Resource");
         GetComponent<BoxCollider2D>().enabled = false;
 		GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         GetComponent<Rigidbody2D>().isKinematic = true;
@@ -77,7 +92,7 @@ public class Resource : MonoBehaviour
     
 	private void OnDrawGizmosSelected()
 	{
-		Gizmos.color = Color.red;
+		Gizmos.color = new Color(0.93f, 0.55f, 0.07f);
 		Gizmos.DrawWireSphere(transform.position, 0.25f);
 	}
 }
