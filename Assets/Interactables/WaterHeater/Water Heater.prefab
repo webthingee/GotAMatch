@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4951050492604364}
   - component: {fileID: 61231189743489464}
   - component: {fileID: 114569113546854872}
-  - component: {fileID: 114431300945647164}
   - component: {fileID: 114644237372388262}
   - component: {fileID: 114977408389935366}
   - component: {fileID: 114374105073814744}
@@ -34,6 +33,11 @@ GameObject:
   - component: {fileID: 114047201163081022}
   - component: {fileID: 114923596850943822}
   - component: {fileID: 114095102969195872}
+  - component: {fileID: 114589945044296698}
+  - component: {fileID: 114804035676845252}
+  - component: {fileID: 114360661965959176}
+  - component: {fileID: 114873930367775596}
+  - component: {fileID: 114355003892034612}
   m_Layer: 12
   m_Name: Water Heater
   m_TagString: Untagged
@@ -184,7 +188,7 @@ MonoBehaviour:
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -219,8 +223,8 @@ MonoBehaviour:
   lockID: 321
   removeLock: 0
   removeKey: 1
-  animator: {fileID: 0}
-  animatorBool: 
+  UnlockInteractables:
+  - {fileID: 0}
 --- !u!114 &114095102969195872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +251,58 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114355003892034612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119695524339196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  storyText: Just one thing left to do.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 0
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114360661965959176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119695524339196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 50
+    y: 141
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 9
+  blockName: Game Start
+  description: 
+  eventHandler: {fileID: 114873930367775596}
+  commandList:
+  - {fileID: 114355003892034612}
+  - {fileID: 114804035676845252}
 --- !u!114 &114374105073814744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,25 +329,12 @@ MonoBehaviour:
   commandList:
   - {fileID: 114556851867427886}
   - {fileID: 114999979738760112}
-  - {fileID: 114717506436549458}
   - {fileID: 114029477117992502}
+  - {fileID: 114717506436549458}
+  - {fileID: 114589945044296698}
   - {fileID: 114771735593793678}
   - {fileID: 114977408389935366}
   - {fileID: 114095102969195872}
---- !u!114 &114431300945647164
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1119695524339196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cbd0c93fbe0e46f78685c33d82bcc7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scope: 1
-  key: Var
-  value: {fileID: 0}
 --- !u!114 &114556851867427886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,6 +411,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canUse: 0
   inUse: 0
+  inProgress: 1
+--- !u!114 &114589945044296698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119695524339196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 1
+  storyText: This won't work. Got a Match?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114644237372388262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: statusInt
+  key: choice
   value: 0
 --- !u!114 &114717506436549458
 MonoBehaviour:
@@ -508,6 +578,45 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &114804035676845252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119695524339196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 11
+  indentLevel: 0
+  storyText: Turn the water heater on, and I'm done for the day!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 0
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114873930367775596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119695524339196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 114360661965959176}
+  waitForFrames: 8
 --- !u!114 &114923596850943822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -533,10 +642,10 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 114374105073814744}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 114977408389935366}
   variables:
   - {fileID: 114644237372388262}
-  - {fileID: 114431300945647164}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -560,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 6
   indentLevel: 1
-  storyText: '[Fizzle] .. [Snap] .. [#fail]
+  storyText: '... Fizzle .. Snap .. #fail !!
 
     No! You gotta be kidding me? That was my last match and it''s broken'
   description: 
