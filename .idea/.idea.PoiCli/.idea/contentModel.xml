@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_PoiCli.397927949.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_PoiCli.-260881923.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -891,6 +891,33 @@
         </e>
         <e p="Scenes" t="Include">
           <e p="CameraResolution.cs" t="Include" />
+        </e>
+        <e p="Settings Management" t="Include">
+          <e p="Options Scene" t="Include">
+            <e p="OptionsManager.cs" t="Include" />
+            <e p="OptionsSceneLoader.cs" t="Include" />
+          </e>
+          <e p="Sound Manager" t="Include">
+            <e p="Editor" t="Include">
+              <e p="AudioEventEditor.cs" t="Include" />
+            </e>
+            <e p="Examples" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Footsteps.cs" t="Include" />
+                <e p="Trigger.cs" t="Include" />
+                <e p="TriggerMusic.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Scriptable Audio" t="Include">
+                <e p="AudioEvent.cs" t="Include" />
+                <e p="MusicAudioEvent.cs" t="Include" />
+                <e p="RandomAudioEvent.cs" t="Include" />
+                <e p="SingleAudioEvent.cs" t="Include" />
+              </e>
+              <e p="SoundManager.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="Tasks" t="Include">
           <e p="BehaviorTask.cs" t="Include" />

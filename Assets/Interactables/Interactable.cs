@@ -47,6 +47,7 @@ public class Interactable : MonoBehaviour
 
     private void OnMouseOver()
     {
+        
         pointerManager.pointerText = this.name;
     }
 

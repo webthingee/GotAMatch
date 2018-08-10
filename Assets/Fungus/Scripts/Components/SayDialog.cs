@@ -476,8 +476,8 @@ namespace Fungus
             AudioClip soundEffectClip = null;
             if (voiceOverClip != null)
             {
-                WriterAudio writerAudio = GetWriterAudio();
-                writerAudio.OnVoiceover(voiceOverClip);
+                WriterAudio writerAudio1 = GetWriterAudio();
+                writerAudio1.OnVoiceover(voiceOverClip);
             }
             else if (speakingCharacter != null)
             {
